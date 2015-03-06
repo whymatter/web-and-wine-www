@@ -10,6 +10,11 @@ body {
 
 /* General & 'Reset' Stuff */
 
+#logo {
+  width: 100%;
+  text-align: center;
+}
+
 .container {
   width: 90%;
   max-width: 600px;
