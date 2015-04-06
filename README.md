@@ -1,2 +1,2 @@
 # www
-Our website, reachable as www.webandwine.org
+Our website, reachable at www.webandwine.org
