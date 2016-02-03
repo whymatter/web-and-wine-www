@@ -97,6 +97,34 @@
                 success: function(response) {
                     console.log(response);
 
+                    var impressions = $('#impressions');
+                    var content = '';
+
+                    for(var i = 0; i < 6; i++) {
+
+                        content += '<div class="col-lg-4 col-sm-6">';
+                        content += '<a href="' + response.results[i].site_link + '" target="_blank" class="portfolio-box">';
+                        content += '<img src="' +  response.results[i].photo_link + '" class="img-responsive" alt="Foto by ' + response.results[i].member.name + '">';
+                        content += '<div class="portfolio-box-caption">';
+                        content += '<div class="portfolio-box-caption-content">';
+                        content += '<div class="project-category text-faded">';
+                        content += 'Foto by';
+                        content += '</div>';
+                        content += '<div class="project-name">';
+                        content += response.results[i].member.name;
+                        content += '</div>';
+                        content += '</div>';
+                        content += '</div>';
+                        content += '</a>';
+                        content += '</div>';
+
+                        // response.results[i].photo_link
+                        // response.results[i].site_link
+                        // response.results[i].member.name
+                    }
+
+
+                    impressions.html(content);
 
 
                 }
