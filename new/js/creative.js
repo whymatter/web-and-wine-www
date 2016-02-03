@@ -68,7 +68,9 @@
                     var nextOrLastMeetup = $('#next-or-last-meetup');
                     var meetupDate = $('#meetup-date');
                     var linkMeetup = $('#link-meetup');
-                    
+                    var meetupCount = $('#meetup-count');
+                    var meetupTalks = $('#meetup-talks');
+
                     var date = new Date(response.results[response.results.length - 1].time);
                     var day = date.getDate();
                     var month = parseInt(date.getMonth()) + 1;
@@ -79,7 +81,9 @@
                     nextOrLastMeetup.html('Web&Wine  – Ort: ' + response.results[response.results.length - 1].venue.name);
                     meetupDate.text(day + '.' + month + '.' + year + ', ' + hour + ':' + minutes + ' Uhr');
                     linkMeetup.html('<a href="' + response.results[response.results.length - 1].event_url + '" target="_blank"class="btn btn-primary btn-xl page-scroll">Anmeldung über Meetup</a>');
-                    
+                    meetupCount.text(response.results.length);
+                    meetupTalks.text(response.results.length * 3);
+
                 }
             });
         },
@@ -107,6 +111,10 @@
                 url: 'https://api.meetup.com/2/groups?offset=0&format=json&group_urlname=web-and-wine&page=200&radius=25.0&fields=&order=id&desc=false&sig_id=101494212&sig=062a2554098d8bcc7892aba3e595dfe690fc5ea7',
                 success: function(response) {
                     console.log(response);
+
+                    var meetupMember = $('#meetup-member');
+
+                    meetupMember.text(response.results[0].members);
                 }
             });
         },
