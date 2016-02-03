@@ -399,3 +399,29 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+#numbers p {
+  font-size: 35px;
+}
+#reviews .text-italic {
+  font-style: italic;
+}
+#reviews .text-margin-bottom {
+  margin-bottom: 15px;
+}
+#team .team-image-huber {
+  background: url("../img/huber.jpeg");
+}
+#team .team-image-jaser {
+  background: url("../img/jaser.jpeg");
+}
+#team .team-image-kolb {
+  background: url("../img/kolb.jpeg");
+}
+#team .team-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center center;
+}
