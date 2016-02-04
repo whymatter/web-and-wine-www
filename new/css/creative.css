@@ -217,6 +217,10 @@ header .header-content .header-content-inner .logo {
   max-width: 650px;
   margin: 0 auto;
 }
+.portfolio-box .img-responsive {
+  background-size: cover;
+  min-height: 400px;
+}
 .portfolio-box .portfolio-box-caption {
   color: white;
   opacity: 0;
