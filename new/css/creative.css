@@ -429,3 +429,6 @@ body {
   background-size: cover;
   background-position: center center;
 }
+#reviews-container a:hover {
+  color: #222222;
+}

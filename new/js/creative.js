@@ -21,7 +21,7 @@
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
-    })
+    });
 
     // Closes the Responsive Menu on Menu Item Click
     $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
@@ -70,10 +70,12 @@
                     var linkMeetup = $('#link-meetup');
                     var meetupCount = $('#meetup-count');
                     var meetupTalks = $('#meetup-talks');
+                    var meetupWine = $('#meetup-wine');
 
                     var date = new Date(response.results[response.results.length - 1].time);
-                    var day = date.getDate();
-                    var month = parseInt(date.getMonth()) + 1;
+                    var day = date.getDate().toString();
+                    day = (day.length > 1) ? day : ('0' + day);
+                    var month = (date.getMonth() + 1).toString();
                     month = (month.length > 1) ? month : ('0' + month);
                     var year = date.getFullYear();
                     var hour = date.getHours();
@@ -81,6 +83,7 @@
 
                     var pastMeetups = response.results.length - 1;
                     var pastTalks = pastMeetups * 3;
+                    var pastWine = pastMeetups * pastTalks;
 
                     if(response.results[pastMeetups].status === 'upcoming') {
                         nextOrLastMeetup.html('Nächstes Web&Wine ist am');
@@ -93,6 +96,7 @@
                     linkMeetup.html('<a href="' + response.results[response.results.length - 1].event_url + '" target="_blank"class="btn btn-primary btn-xl page-scroll">Kostenlos anmelden über Meetup</a>');
                     meetupCount.text(pastMeetups);
                     meetupTalks.text(pastTalks);
+                    meetupWine.text(pastWine);
 
                 }
             });
@@ -108,7 +112,7 @@
                 success: function(response) {
                     var impressions = $('#impressions');
                     var content = '';
-                    var randomStart = that.radomNumber(0, response.results.length - 6);
+                    var randomStart = that.randomNumber(0, response.results.length - 6);
                     var randomEnd = randomStart + 6;
 
                     for(var i = randomStart; i < randomEnd; i++) {
@@ -143,28 +147,41 @@
                 method:'get',
                 url: 'https://api.meetup.com/2/groups?offset=0&format=json&group_urlname=web-and-wine&page=200&radius=25.0&fields=&order=id&desc=false&sig_id=101494212&sig=062a2554098d8bcc7892aba3e595dfe690fc5ea7',
                 success: function(response) {
-                    console.log(response);
-
                     var meetupMember = $('#meetup-member');
-
                     meetupMember.text(response.results[0].members);
                 }
             });
         },
 
         getGroupComments: function() {
+            var that = this;
 
             $.ajax({
                 dataType:'jsonp',
                 method:'get',
                 url: 'https://api.meetup.com/comments?offset=0&format=json&group_urlname=web-and-wine&page=200&order=ctime&sig_id=101494212&sig=3079f7184943cfdcfa4982b566c6751183e345af',
                 success: function(response) {
-                    console.log(response);
+                    var reviewsContainer = $('#reviews-container');
+                    var content = '';
+                    var randomStart = that.randomNumber(0, response.results.length - 3);
+                    var randomEnd = randomStart + 3;
+
+                    for(var i = randomStart; i < randomEnd; i++) {
+
+                        content += '<div class="col-lg-4 col-md-6 text-center">';
+                        content += '<div class="service-box">';
+                        content += '<p class="text-faded text-italic text-margin-bottom">"' + response.results[i].comment + '"</p>';
+                        content += '<p><a class="text-muted" href="' + response.results[i].link + '" target="_blank">' + response.results[i].name + '</a></p>';
+                        content += '</div>';
+                        content += '</div>';
+                    }
+
+                    reviewsContainer.html(content);
                 }
             });
         },
 
-        radomNumber: function(min, max) {
+        randomNumber: function(min, max) {
 
             return min + Math.floor(Math.random() * (max - min + 1));
         }
