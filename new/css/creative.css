@@ -432,3 +432,13 @@ body {
 #reviews-container a:hover {
   color: #222222;
 }
+#meetup-sponsors {
+  margin-top: 30px;
+  text-align: center;
+}
+#meetup-sponsors .logo {
+  background-size: cover;
+  max-height: 90px;
+  width: 120px;
+  margin: 0 10px 25px;
+}

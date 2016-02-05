@@ -148,7 +148,20 @@
                 url: 'https://api.meetup.com/2/groups?offset=0&format=json&group_urlname=web-and-wine&photo-host=public&page=200&radius=25.0&fields=sponsors&order=id&desc=false&sig_id=101494212&sig=af8aa2f4f2771504003595595f267c3f72ee6b12',
                 success: function(response) {
                     var meetupMember = $('#meetup-member');
+                    var meetupSponsors = $('#meetup-sponsors');
+
+                    var content = '';
+                    var sponsors = response.results[0].sponsors;
+
+                    for(var i = 0; i < sponsors.length; i++) {
+                        content += '<img src="' + sponsors[i].image_url + '" class="logo">';
+
+                    }
+
+                    meetupSponsors.html(content);
+
                     meetupMember.text(response.results[0].members);
+
                 }
             });
         },
