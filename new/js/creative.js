@@ -145,7 +145,7 @@
             $.ajax({
                 dataType:'jsonp',
                 method:'get',
-                url: 'https://api.meetup.com/2/groups?offset=0&format=json&group_urlname=web-and-wine&page=200&radius=25.0&fields=&order=id&desc=false&sig_id=101494212&sig=062a2554098d8bcc7892aba3e595dfe690fc5ea7',
+                url: 'https://api.meetup.com/2/groups?offset=0&format=json&group_urlname=web-and-wine&photo-host=public&page=200&radius=25.0&fields=sponsors&order=id&desc=false&sig_id=101494212&sig=af8aa2f4f2771504003595595f267c3f72ee6b12',
                 success: function(response) {
                     var meetupMember = $('#meetup-member');
                     meetupMember.text(response.results[0].members);
