@@ -149,12 +149,11 @@
                 success: function(response) {
                     var meetupMember = $('#meetup-member');
                     var meetupSponsors = $('#meetup-sponsors');
-
                     var content = '';
                     var sponsors = response.results[0].sponsors;
 
                     for(var i = 0; i < sponsors.length; i++) {
-                        content += '<img src="' + sponsors[i].image_url + '" class="logo">';
+                        content += '<a href="' + sponsors[i].url + '" target="_blank"><img src="' + sponsors[i].image_url + '" class="logo" title="' + sponsors[i].info + '" alt="' + sponsors[i].info + '"></a>';
 
                     }
 
