@@ -93,7 +93,7 @@
 
                     meetupLocation.text(response.results[response.results.length - 1].venue.name + ', ' + response.results[response.results.length - 1].venue.address_1 + ', ' + response.results[response.results.length - 1].venue.city);
                     meetupDate.text(day + '.' + month + '.' + year + ', ' + hour + ':' + minutes + ' Uhr');
-                    linkMeetup.html('<a href="' + response.results[response.results.length - 1].event_url + '" target="_blank"class="btn btn-primary btn-xl page-scroll">Kostenlos anmelden über Meetup</a>');
+                    linkMeetup.html('<a href="' + response.results[response.results.length - 1].event_url + '" target="_blank"class="btn btn-primary btn-xl">Kostenlos anmelden über Meetup</a>');
                     meetupCount.text(pastMeetups);
                     meetupTalks.text(pastTalks);
                     meetupWine.text(pastWine);
