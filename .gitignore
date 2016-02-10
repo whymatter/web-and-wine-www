@@ -1,8 +1,6 @@
-
-new/js/creative.min.js
-
-new/css/creative.min.css
-
-new/css/creative.min.css
-
-new/js/creative.min.js
+node_modules
+.idea
+js/creative.min.js
+css/creative.min.css
+css/creative.min.css
+js/creative.min.js
