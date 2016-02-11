@@ -1,9 +1,3 @@
-/*!
- * Creative v1.0.3 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-
 html,
 body {
   height: 100%;
@@ -177,6 +171,16 @@ header .header-content .header-content-inner p {
 }
 header .header-content .header-content-inner .logo {
   width: 20em;
+}
+header .scroll-notification {
+  position: absolute;
+  bottom: 15px;
+  padding-right: 15px;
+  width: 100%;
+  text-align: center;
+}
+header .scroll-notification i {
+  font-size: 29px;
 }
 @media (min-width: 768px) {
   header {
