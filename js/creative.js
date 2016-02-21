@@ -73,12 +73,13 @@
                     var meetupWine = $('#meetup-wine');
                     
                     var pastMeetup = response.results.length - 1;
-                    var pastTalks = pastMeetup * 3;
-                    var pastWine = pastMeetup * pastTalks;
-
+                    
                     if(response.results[pastMeetup].announced !== true) {
                         pastMeetup = pastMeetup - 1;
                     }
+
+                    var pastTalks = pastMeetup * 3;
+                    var pastWine = pastMeetup * pastTalks;
 
                     if(response.results[pastMeetup].status === 'upcoming' && response.results[pastMeetup].announced === true) {
                         nextOrLastMeetup.html('Nächstes Web&Wine ist am');
