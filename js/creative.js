@@ -71,8 +71,22 @@
                     var meetupCount = $('#meetup-count');
                     var meetupTalks = $('#meetup-talks');
                     var meetupWine = $('#meetup-wine');
+                    
+                    var pastMeetup = response.results.length - 1;
+                    var pastTalks = pastMeetup * 3;
+                    var pastWine = pastMeetup * pastTalks;
 
-                    var date = new Date(response.results[response.results.length - 1].time);
+                    if(response.results[pastMeetup].announced !== true) {
+                        pastMeetup = pastMeetup - 1;
+                    }
+
+                    if(response.results[pastMeetup].status === 'upcoming' && response.results[pastMeetup].announced === true) {
+                        nextOrLastMeetup.html('Nächstes Web&Wine ist am');
+                    } else {
+                        nextOrLastMeetup.html('Letztes Web&Wine war am');
+                    }
+
+                    var date = new Date(response.results[pastMeetup].time);
                     var day = date.getDate().toString();
                     day = (day.length > 1) ? day : ('0' + day);
                     var month = (date.getMonth() + 1).toString();
@@ -81,20 +95,10 @@
                     var hour = date.getHours();
                     var minutes = date.getMinutes();
 
-                    var pastMeetups = response.results.length - 1;
-                    var pastTalks = pastMeetups * 3;
-                    var pastWine = pastMeetups * pastTalks;
-
-                    if(response.results[pastMeetups].status === 'upcoming') {
-                        nextOrLastMeetup.html('Nächstes Web&Wine ist am');
-                    } else {
-                        nextOrLastMeetup.html('Letztes Web&Wine war am');
-                    }
-
-                    meetupLocation.text(response.results[response.results.length - 1].venue.name + ', ' + response.results[response.results.length - 1].venue.address_1 + ', ' + response.results[response.results.length - 1].venue.city);
+                    meetupLocation.text(response.results[pastMeetup].venue.name + ', ' + response.results[pastMeetup].venue.address_1 + ', ' + response.results[pastMeetup].venue.city);
                     meetupDate.text(day + '.' + month + '.' + year + ', ' + hour + ':' + minutes + ' Uhr');
-                    linkMeetup.html('<a href="' + response.results[response.results.length - 1].event_url + '" target="_blank"class="btn btn-primary btn-xl">Kostenlos anmelden über Meetup</a>');
-                    meetupCount.text(pastMeetups);
+                    linkMeetup.html('<a href="' + response.results[pastMeetup].event_url + '" target="_blank"class="btn btn-primary btn-xl">Kostenlos anmelden über Meetup</a>');
+                    meetupCount.text(pastMeetup);
                     meetupTalks.text(pastTalks);
                     meetupWine.text(pastWine);
 
