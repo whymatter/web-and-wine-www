@@ -81,20 +81,33 @@
                     var pastTalks = pastMeetup * 3;
                     var pastWine = pastMeetup * pastTalks;
 
+                    var today = new Date();
+                    var todayDay = today.getDate();
+                    var todayMonth = today.getMonth() + 1;
+
+                    // convert timestamp
+                    var date = new Date(response.results[pastMeetup].time);
+                    var day = date.getDate().toString();
+                    var month = (date.getMonth() + 1).toString();
+                    var year = date.getFullYear();
+                    var hour = date.getHours();
+                    var minutes = date.getMinutes();
+
                     if(response.results[pastMeetup].status === 'upcoming' && response.results[pastMeetup].announced === true) {
-                        nextOrLastMeetup.html('Nächstes Web&Wine ist am');
+                        
+                        if((todayDay + '' + todayMonth) === (day + '' + month)) {
+                            nextOrLastMeetup.html('Heute ist Web&Wine');
+                        } else {
+                            nextOrLastMeetup.html('Nächstes Web&Wine ist am');
+                        }
+
                     } else {
                         nextOrLastMeetup.html('Letztes Web&Wine war am');
                     }
 
-                    var date = new Date(response.results[pastMeetup].time);
-                    var day = date.getDate().toString();
+                    // add left-hand zeros if needed
                     day = (day.length > 1) ? day : ('0' + day);
-                    var month = (date.getMonth() + 1).toString();
                     month = (month.length > 1) ? month : ('0' + month);
-                    var year = date.getFullYear();
-                    var hour = date.getHours();
-                    var minutes = date.getMinutes();
 
                     meetupLocation.text(response.results[pastMeetup].venue.name + ', ' + response.results[pastMeetup].venue.address_1 + ', ' + response.results[pastMeetup].venue.city);
                     meetupDate.text(day + '.' + month + '.' + year + ', ' + hour + ':' + minutes + ' Uhr');
