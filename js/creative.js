@@ -72,28 +72,28 @@
                     var meetupTalks = $('#meetup-talks');
                     var meetupWine = $('#meetup-wine');
                     
-                    var pastMeetup = response.results.length - 1;
+                    var pastMeetupLastIndex = response.results.length - 1;
+                    var pastMeetupsCounted = pastMeetupLastIndex;
+                    var pastTalks = pastMeetupsCounted * 3;
+                    var pastWine = pastMeetupsCounted * pastTalks;
                     
-                    if(response.results[pastMeetup].announced !== true) {
-                        pastMeetup = pastMeetup - 1;
+                    if(response.results[pastMeetupLastIndex].announced !== true) {
+                        pastMeetupLastIndex = pastMeetupLastIndex - 1;
                     }
-
-                    var pastTalks = pastMeetup * 3;
-                    var pastWine = pastMeetup * pastTalks;
 
                     var today = new Date();
                     var todayDay = today.getDate();
                     var todayMonth = today.getMonth() + 1;
 
                     // convert timestamp
-                    var date = new Date(response.results[pastMeetup].time);
+                    var date = new Date(response.results[pastMeetupLastIndex].time);
                     var day = date.getDate().toString();
                     var month = (date.getMonth() + 1).toString();
                     var year = date.getFullYear();
                     var hour = date.getHours();
                     var minutes = date.getMinutes();
 
-                    if(response.results[pastMeetup].status === 'upcoming' && response.results[pastMeetup].announced === true) {
+                    if(response.results[pastMeetupLastIndex].status === 'upcoming' && response.results[pastMeetupLastIndex].announced === true) {
                         
                         if((todayDay + '' + todayMonth) === (day + '' + month)) {
                             nextOrLastMeetup.html('Heute ist Web&Wine');
@@ -109,10 +109,10 @@
                     day = (day.length > 1) ? day : ('0' + day);
                     month = (month.length > 1) ? month : ('0' + month);
 
-                    meetupLocation.text(response.results[pastMeetup].venue.name + ', ' + response.results[pastMeetup].venue.address_1 + ', ' + response.results[pastMeetup].venue.city);
+                    meetupLocation.text(response.results[pastMeetupLastIndex].venue.name + ', ' + response.results[pastMeetupLastIndex].venue.address_1 + ', ' + response.results[pastMeetupLastIndex].venue.city);
                     meetupDate.text(day + '.' + month + '.' + year + ', ' + hour + ':' + minutes + ' Uhr');
-                    linkMeetup.html('<a href="' + response.results[pastMeetup].event_url + '" target="_blank"class="btn btn-primary btn-xl">Kostenlos anmelden über Meetup</a>');
-                    meetupCount.text(pastMeetup);
+                    linkMeetup.html('<a href="' + response.results[pastMeetupLastIndex].event_url + '" target="_blank"class="btn btn-primary btn-xl">Kostenlos anmelden über Meetup</a>');
+                    meetupCount.text(pastMeetupsCounted);
                     meetupTalks.text(pastTalks);
                     meetupWine.text(pastWine);
 
