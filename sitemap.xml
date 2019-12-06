@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://webandwine.org/posts/</loc>
+    <lastmod>2018-10-19T20:08:42+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://webandwine.org/posts/the-fox-and-the-grapes/</loc>
+    <lastmod>2018-10-19T20:08:42+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://webandwine.org/</loc>
+    <lastmod>2018-10-19T20:08:42+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://webandwine.org/privacy-policy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://webandwine.org/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://webandwine.org/tags/</loc>
+  </url>
+  
+</urlset>

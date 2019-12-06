@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web&amp;Wine</title>
+    <link>https://webandwine.org/</link>
+    <description>Recent content on Web&amp;Wine</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Oct 2018 20:08:42 +0530</lastBuildDate>
+    
+	<atom:link href="https://webandwine.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Fox and the Grapes</title>
+      <link>https://webandwine.org/posts/the-fox-and-the-grapes/</link>
+      <pubDate>Fri, 19 Oct 2018 20:08:42 +0530</pubDate>
+      
+      <guid>https://webandwine.org/posts/the-fox-and-the-grapes/</guid>
+      <description>A Fox one day spied a beautiful bunch of ripe grapes hanging from a vine trained along the branches of a tree. The grapes seemed ready to burst with juice, and the Fox&#39;s mouth watered as he gazed longingly at them.
+The bunch hung from a high branch, and the Fox had to jump for it. The first time he jumped he missed it by a long way. So he walked off a short distance and took a running leap at it, only to fall short once more.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://webandwine.org/privacy-policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://webandwine.org/privacy-policy/</guid>
+      <description>Datenschutzerklärung
+Allgemeiner Hinweis und Pflichtinformationen
+Benennung der verantwortlichen Stelle
+Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+Web&amp;Wine
+Maximilian Ammann
+max@maxammann.org 
+Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.).
+Widerruf Ihrer Einwilligung zur Datenverarbeitung
+Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich.</description>
+    </item>
+    
+  </channel>
+</rss>
