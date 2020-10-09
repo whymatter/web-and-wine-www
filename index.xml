@@ -6,11 +6,7 @@
     <description>Recent content on Web&amp;Wine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Oct 2018 20:08:42 +0530</lastBuildDate>
-    
-	<atom:link href="https://webandwine.org/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 19 Oct 2018 20:08:42 +0530</lastBuildDate><atom:link href="https://webandwine.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Fox and the Grapes</title>
       <link>https://webandwine.org/posts/the-fox-and-the-grapes/</link>
@@ -135,7 +131,7 @@ Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarb
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://webandwine.org/sponsors/hsa-digit/</guid>
-      <description>Die Initiative ,HSA_digit&amp;rsquo; = DIE zentrale Anlaufstelle für Digitale Gründer an der Hochschule Augsburg</description>
+      <description>Die Initiative ,HSA_digit&#39; = DIE zentrale Anlaufstelle für Digitale Gründer an der Hochschule Augsburg</description>
     </item>
     
     <item>
